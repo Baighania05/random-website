@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>JS FUNCTION EXAMPLES</title>
+</head>
+<body>
+    <h2> CHECK CONSOLE FOR OUTPUT</h2>
+    <script>
+        // 1. SIMPLE FUNCTION
+        function greet() {
+            document.write("Hello! <br>");
+        }
+        greet(); //output: Hello!
+
+        // 2. FUNCTION WITH PARAMETER
+        function greetUser (name,age){
+            document.write("hello "+ name + age);
+        }
+        greetUser("Zohra ", 19 + "<br>"); //output : Hello Zohra
+        greetUser("HIBA ", 19 + "<br>"); //output : Hello HIBA
+        greetUser("ARSHMA ", 19 + "<br>"); //output : Hello ARSHMA
+
+        // 3. FUNCTION WITH RETURN VALUE
+        function add(a,b) {
+            return a + b;
+        }
+        function sub(a,b) {
+            return a - b;
+        }
+        function mul(a,b) {
+            return a * b;
+        }
+        function div(a,b) {
+            return a / b;
+        }
+        function square(number) {
+            return number * number;
+        }
+        document.write(add(5, 3) + "your result");
+        document.write(sub(5, 3) + "your result");
+        document.write(mul(5, 3) + "your result");
+        document.write(div(5, 3) + "your result");
+        document.write(square(8));
+
+        //square 5*5 = 25 4 4 16
+
+        // arrow function
+        //function naam (){
+        // }
+
+        let a = () => {
+            document.write("HELLO")
+        }
+         a();
+         
+    </script>
+</body>
+</html>

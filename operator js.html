@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator</title>
+</head>
+<body>
+    <script>
+        // operators
+        // arithmetic operators
+        let a =10;
+        let b =20;
+       // string
+     
+       document.write("a+b =" + (a+b))
+       document.write("<br>")
+       document.write("a-b =" + (a-b))
+       document.write("<br>")
+       document.write("a/b =" + (a/b))
+       document.write("<br>")  
+       document.write("a>b =" + (a>b))
+       document.write("<br>")
+       document.write("a>b =" + (a<b))
+       document.write("<br>")
+       document.write("a<=b =" + (a<=b))
+       document.write("<br>")
+       document.write("a>=b =" + (a>=b))
+       document.write("<br>")
+
+
+       let r = 85;
+       console.log(r);
+       console.log(r++);
+       console.log(r);
+       console.log(++r);
+       console.log(r);
+       console.log(r--);
+       console.log(r);
+       console.log(--r);
+
+    //    asignment operators
+    let number = 100;
+    number+= 200;   //100+200
+    number-= 50;    //100+200
+    number*= 200;   //100+200
+    number/= 200;   //100+200
+    document.write (number)
+
+// a=b a b assign
+//let a;
+//let b=10;
+// console.log(a=b)
+//equal == true false
+//document.writ(5==5)
+let num1=10;
+let num2=20;
+console.log(typeof num1)
+console.log(typeof num2)
+
+
+document.write(num1 == num2)
+//value bhi same dete type bhi same ho
+document.write(num1 != num2)
+document.write(num1 !== num2)
+document.write(num1 > num2) //true
+document.write(num1 < num2)  //false
+document.write(num1 >= num2)
+document.write(num1 <= num2)
+
+//logical operators && and condition AND && both condition TRUE
+console.log("&& operator check ="+(5==5 && 10==10));
+console.log("&& operator check ="+(5==6 && 10==10));
+console.log("&& operator check ="+(5==5 && 10==100));
+console.log("&& operator check ="+(5==50 && 10==100));
+
+// OR OPERATOR || PIPE DONO M S KOI BHI CONDITION SHI HOGI TU TRUE HOJY GA
+console.log("&& operator check ="+(5==5  || 10==10));
+console.log("&& operator check ="+(5==50 || 10==100));
+console.log("&& operator check ="+(5==5 || 10==102));
+console.log("&& operator check ="+(5==50 || 10==100));
+
+// NOT OPERATORS ! 
+console.log("&& operator check ="+ !(10>100));
+
+let age = 100;
+// if (age > 18){
+// document.write("you  are allow to go")
+//}
+// else{
+// document.write("you are not allow to go")
+//}
+
+//user competition age>18 idcard=true
+let idcard=true;
+if(age>18 && idcard) {
+    document.write("ypu are granted access")
+}
+else{
+    document.write("you are not allow")
+}
+
+let name = prompt("what's your name?");
+        let password =  prompt("password");
+        
+    
+
+  if(name=="admin" && password=="12345") {
+    alert("you are granted access")
+    window.location.href="dashboard.html"
+}
+else{
+    alert("you are not allow")
+}
+   // example 1
+    if (mark >= 80){
+        console.log("A grade");
+    }
+    else if (mark >= 60) {
+        console.log("B grade");
+    }
+    else if (mark >= 60) {
+        console.log("C grade");
+    }
+        else{
+            console.log("fail");
+        }
+        // example 2
+        let weather ="rainy";
+        if (weather === "sunny"){
+            console.log("wear sunglasses");
+        }
+        else if(weather === "rainy"){
+            console.log("take an umberlla");
+        }
+        else {
+            console.log("wear a jacket");
+        }
+          
+          
+        
+    </script>
+</body>
+</html>

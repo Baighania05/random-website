@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+    <style>
+H2{
+    transform: rotate(150deg);
+    color: blueviolet;
+    font-size: 33px;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+    transition: all 2s linear 1s;
+}
+h2:hover {
+    color: red;
+    font-size: 100px;
+} 
+div{
+    transform: rotate(10deg);
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+}
+div:hover{
+    transform:  scale(0.3,2);
+    transform: scaleX(2);
+    transform:scaleY(2);
+}
+    </style>
+</head>
+<body>
+    <!-- transition -->
+     <h2>Hello</h2>
+     <div>TRANSFORM</div>
+</body>
+</html>

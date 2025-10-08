@@ -1,0 +1,151 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap & jQuery Tasks</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      padding-top: 56px;
+    }
+    footer {
+      background-color: #292a2b;
+      padding: 1rem 0;
+      margin-top: 2rem;
+      text-align: center;
+    color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CATS</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Layout with Bootstrap Grid -->
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+      <div class="card my-5" style="max-width: 400px;">
+            <img
+              src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=80&w=1092&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="card-img-top"
+              alt="Card Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">PERSIAN CATS</h5>
+              <p class="card-text">
+                  Cats, or Felis catus, are beloved domestic carnivores and members of the Felidae family, known for their independent, playful nature, sharp senses, and agile athleticism, including impressive jumping abilities.
+              </p>
+              <a href="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?q=80&w=1092&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="col-12 col-lg-6">
+       <!-- Bootstrap Card -->
+    <div class="card my-5" style="max-width: 400px;">
+     <!-- Button to change background color -->
+      <div class="mb-3">
+        <button id="changeBgBtn" class="btn btn-secondary">Change Background Color</button>
+        <div id="colorBox" class="mt-3 p-4 border" style="background-color: #e9ecef;">
+          cat, or feline, Any member of the family Felidae, the most highly specialized group of mammalian carnivores. Modern-type cats appeared in the fossil record about 10 million years ago. Cats in the genus Panthera (leopard, jaguar, tiger, and lion) roar but cannot purr, and their pupils are round.
+        </div>
+      </div>
+  
+      <!-- Hide and Show paragraph -->
+      <div class="mb-3">
+        <button id="hideParaBtn" class="btn btn-warning me-2">Hide Paragraph</button>
+        <button id="showParaBtn" class="btn btn-success">Show Paragraph</button>
+        <p id="togglePara" class="mt-3">
+            Cats are believed to be the only mammals who don't taste sweetness.
+        </p>
+      </div>
+  
+      <!-- Change text of element -->
+      <div class="mb-3">
+        <h4 id="textToChange">Original Heading Text</h4>
+        <button id="changeTextBtn" class="btn btn-info">
+          Change Text
+        </button>
+      </div>
+    </div>
+      </div>
+    </div>
+
+   
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MySite. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Change background color of div on button click
+      $('#changeBgBtn').click(function () {
+        const colors = ['#f8d7da', '#d4edda', '#d1ecf1', '#fff3cd', '#cce5ff'];
+        // Pick a random color different from current
+        let currentColor = $('#colorBox').css('background-color');
+        let newColor;
+        do {
+          newColor = colors[Math.floor(Math.random() * colors.length)];
+        } while (newColor === currentColor);
+        $('#colorBox').css('background-color', newColor);
+      });
+
+      // Hide paragraph
+      $('#hideParaBtn').click(function () {
+        $('#togglePara').hide();
+      });
+
+      // Show paragraph
+      $('#showParaBtn').click(function () {
+        $('#togglePara').show();
+      });
+
+      // Change text of heading
+      $('#changeTextBtn').click(function () {
+        $('#textToChange').text('The text has been changed!');
+      });
+    });
+  </script>
+</body>
+</html>

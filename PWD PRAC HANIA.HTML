@@ -1,0 +1,232 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script>
+    // Toggle Mobile Nav
+function toggleMenu() {
+  const nav = document.getElementById('navLinks');
+  nav.classList.toggle('show');
+}
+
+// Form Validation
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+  const errorEl = document.getElementById('formError');
+
+  if (!name || !email || !password) {
+    errorEl.textContent = 'Please fill in all fields.';
+  } else {
+    errorEl.textContent = '';
+    alert('Registration successful!');
+    this.reset();
+  }
+});
+
+// Theme Changer
+function changeTheme(color) {
+  document.body.style.backgroundColor = color;
+}
+</script>
+   
+    <style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Gallery */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-container img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 8px;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Form */
+.register form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+/* Theme Changer */
+.theme-changer {
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.theme-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.theme-buttons button:nth-child(1) { background-color: red; }
+.theme-buttons button:nth-child(2) { background-color: blue; }
+.theme-buttons button:nth-child(3) { background-color: green; }
+.theme-buttons button:nth-child(4) { background-color: goldenrod; }
+.theme-buttons button:nth-child(5) { background-color: black; }
+</style>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">Travel Agency</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <h2>Top Destinations</h2>
+        <div class="gallery-container">
+            <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhcmlzfGVufDB8fDB8fHww" alt="Paris">
+            <img src="https://images.unsplash.com/photo-1549693578-d683be217e58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dG9reW98ZW58MHx8MHx8fDA%3D" alt="Tokyo">
+            <img src="https://media.istockphoto.com/id/2147562429/photo/aerial-view-of-statue-of-liberty-and-city-skyline.webp?a=1&b=1&s=612x612&w=0&k=20&c=XvdZrChIio2dVIOcdt3i-yvO7gK5wDRANuKsFlFCGpo=" alt="New York">
+            <img src="https://media.istockphoto.com/id/2172445700/photo/rome-italy-the-colosseum-or-coliseum-at-sunrise.webp?a=1&b=1&s=612x612&w=0&k=20&c=SOr9xbz9tKOkGA9j3zMbKsOF-XNcfZTllce1TaAQrZE=" alt="Rome">
+            <img src="https://media.istockphoto.com/id/2167880716/photo/wide-cityscape-of-sydney-at-sunset-showing-the-grown-tower-international-towers-and-others.webp?a=1&b=1&s=612x612&w=0&k=20&c=4vuEp6zZ0JtND1mhTuRaJ3HsofqG4Xa5KJYBmMUh3xM=" alt="Sydney">
+
+    </section>
+
+    <!-- Theme Changer -->
+
+        <h2>Change Theme</h2>
+        <div class="theme-buttons">
+            <button  class="Red" onclick="changeTheme('red')">Red</button>
+            <button class="Blue" onclick="changeTheme('blue')">Blue</button>
+            <button class="Green"onclick="changeTheme('green')">Green</button>
+            <button class="Yellow" onclick="changeTheme('yellow')">Yellow</button>
+            <button class="Black" onclick="changeTheme('black')">Black</button>
+        </div>
+    </section>
+    
+    <!-- Registration Form -->
+    <section class="register">
+        <h2>Register</h2>
+        <form id="signupForm">
+            <div class="error"></div>
+            <input type="text" id="name" placeholder="Name">
+            <div class="error" id="name error"></div>
+            <input type="email" id="email" placeholder="Email">
+            <div class="error" id="email error"></div>
+
+            <input type="password" id="password" placeholder="Password">
+            <div class="error" id="passworderror"></div>
+            
+            
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    
+     
+   
+  
+</body>
+</html>

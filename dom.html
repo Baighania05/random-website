@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo">Hello</h2>
+    <h2 class="abc">Hello</h2>
+    <h2 class="abc">Hello</h2>
+    <h2 class="abc">Hello</h2>   
+    <h2 class="abc">Hello</h2>
+    <h2 class="abc">Hello</h2>
+
+    <div> THIS IS DIV ONE</div>
+    <div> THIS IS DIV TWO</div>
+
+<div id="query">ID # query selector </div>
+<div class="query" >CLASS. Nquery selector</div>
+<div class="query"> CLASS. Nquery selector</div>
+<div class="query">CLASS. Nquery selector</div>
+<div  TAGNAME QUERY SELECTOR ></div>
+
+    <script>
+        //ACCESS CHANGE INNERHTML
+        document.getElementById("demo").innerHTML="text change"
+        
+        //array 0
+        //let student1="zohra";
+        //let student2="fatima";
+        //let student3="aeshma";
+        //let student4="hiba";
+        //let students=["1","2","3","4"]
+
+        let a = document.getElementsByClassName("abc") [3].innerHTML="abc";
+        document.getElementsByTagName("div")[1].innerHTML="div element" 
+
+        //id class tag
+        document.querySelector("#query").innerHTML="✔ done id";   // id k liye # use hoga 
+        document.querySelector(".query").innerHTML="✔ done class"; // class k liye . use hoga
+        document.querySelector("div").innerHTML="✔ tag"; // emoji k liye window + coloum use hoga
+          
+        let r = document.getElementById("demo"); //get the element
+        r.innerHTML="text change";  //change the text
+        r.style.backgroundColor="brown "; // change the background colour
+        r.style.color="WHITE"; //change the background colour
+        r.style.paddimg ="23px";
+
+        
+
+    </script>
+</html>

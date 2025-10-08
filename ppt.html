@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Seed Starter - Green-world</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary-green: #2f4f2f;
+            --light-green: #8fbc8f;
+            --soft-green: #e6f2e6;
+            --accent-green: #3e6b3e;
+            --text-dark: #2f4f2f;
+            --text-light: #d4edda;
+            --warning: #dc3545;
+            --warning-light: #f8d7da;
+        }
+
+        body {
+            background-color: var(--soft-green);
+            color: var(--text-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* ===== Glassmorphism Navbar ===== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.15);
+            /* Transparent glass effect */
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            padding: 0.7rem 1rem;
+            transition: all 0.4s ease-in-out;
+            z-index: 1000;
+        }
+
+        /* Navbar becomes more solid on scroll */
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px) saturate(200%);
+            -webkit-backdrop-filter: blur(10px) saturate(200%);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navbar brand */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #2e7d32 !important;
+            /* Dark green */
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+
+        /* Nav links */
+        .navbar .nav-link {
+            color: #2e2e2e !important;
+            font-weight: 500;
+            margin: 0 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: #388e3c !important;
+            /* Green hover */
+            transform: translateY(-2px);
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            background: rgba(59, 105, 16, 0.694);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            padding: 0.5rem 0;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Dropdown items */
+        .dropdown-item {
+            color: #2e2e2e;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(6, 75, 8, 0.611);
+            color: #d7d7d7;
+            border-radius: 8px;
+        }
+
+        /* Dropdown opens on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* Contact button */
+        .btn-green {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background: linear-gradient(135deg, #66bb6a, #388e3c);
+            transform: translateY(-2px);
+        }
+
+        /* Fade-in animation for dropdown */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        .gallery-section {
+            padding: 60px 0;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 36px;
+            color: #2d6a4f;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background-color: #40916c;
+            margin: 0 auto 40px auto;
+            border-radius: 10px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        ul.list-group li {
+            background-color: #f0fdf4;
+            border: none;
+            padding: 10px 20px;
+            color: #344e41;
+        }
+
+        ul.list-group li::before {
+            content: "🌿 ";
+        }
+
+        h3 {
+            font-weight: 600;
+        }
+
+        .section-bg {
+            background-color: #eafbee;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-img {
+                height: 200px;
+            }
+        }
+
+        /* footer styling */
+        /* Footer base */
+        footer {
+            background-color: #2f4f2f;
+            color: #fff;
+        }
+
+        /* Add vertical white line between columns */
+        footer .row>div {
+            border-right: 1px solid rgba(255, 255, 255, 0.4);
+            /* subtle white */
+            padding-right: 20px;
+        }
+
+        footer .row>div:last-child {
+            border-right: none;
+            /* remove line from last column */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="imgs/logo(1).png" alt="Green World logo" style="height: 70px; width: auto;" class="me-2">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index..html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#">Explore Plants 🍂</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Indoor Plants</a></li>
+                            <li><a class="dropdown-item" href="#">Outdoor Plants</a></li>
+                            <li><a class="dropdown-item" href="#">Medicinal Plants</a></li>
+                            <li><a class="dropdown-item" href="#">Foods & Vegetables</a></li>
+                            <li><a class="dropdown-item" href="Begginners-guide.html">Beginners</a></li>
+                            <li><a class="dropdown-item" href="Common-Mistakes.html">Common Mistakes</a></li>
+                            <li><a class="dropdown-item" href="Tools.html">Tools</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="community-project.html">Community Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Seed-Starter.html">Seed Starter</a>
+                    </li>
+                </ul>
+                <a href="Contact-us.html" class="btn-green text-decoration-none">
+                    <i class="bi bi-heart-fill me-2"></i> Contact Us
+                </a>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Seed Starter Gallery Section -->
+    <section class="gallery-section section-bg" id="seed-starter">
+        <div class="container">
+            <h2 class="gallery-title"> Seed Starter 🌱</h2>
+            <div class="divider"></div>
+
+            <p class="text-center mb-5 fs-5 text-muted">
+                Begin your plant journey with the magic of seeds. Explore how life begins — from a tiny seed to a
+                thriving
+                plant.
+                This gallery showcases the types of seeds, germination stages, starter tools, and care tips to help you
+                grow
+                your own green world.
+            </p>
+
+            <!-- Seed Types -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1459607178/photo/seeds-in-bags-on-the-soil-selective-focus.jpg?s=612x612&w=0&k=20&c=oZfLa2eDQmZqqp0KdIO-jKw3Pz_K50Xrnpu0phnfSrQ="
+                        class="gallery-img" />
+                    <p class="caption">Organic Vegetable Seeds</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/2233636911/photo/chinese-new-year-food-theme-dried-sunflower-seeds.jpg?s=612x612&w=0&k=20&c=yix-8RgHSo4aO7IeufDvG7xfmPhnM9R7tLVrqPlq8ts="
+                        class="gallery-img" />
+                    <p class="caption">Colorful Flower Seeds</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/2222946906/photo/fresh-lavender-flowers-as-background-top-view-lavender-seeds.jpg?s=612x612&w=0&k=20&c=MV2y4Zy5YvlzBTvC1oFjg5zFf0wlXiYGJFVk-xnOXVw="
+                        class="gallery-img" />
+                    <p class="caption">Aromatic Herb Seeds</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1145928992/photo/hand-with-paprika-seeds.jpg?s=612x612&w=0&k=20&c=l6_M-E6yg_SnpPCXWncBEaZoBWgufxZdyT_obHlynHA="
+                        class="gallery-img" />
+                    <p class="caption"> Bell Peppers Seeds </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1078151190/photo/red-round-radish-and-seeds.jpg?s=612x612&w=0&k=20&c=b3pfm84IShIHL_CckgQRTXngx2cA8FwsyO6PYdfgRrc="
+                        class="gallery-img" />
+                    <p class="caption"> Radish Seeds</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/2235376599/photo/closeup-of-raw-green-mung-beans-in-a-wooden-bowl-placed-on-a-pile-of-beans-background-ideal.jpg?s=612x612&w=0&k=20&c=3txH62UKr7zDbiaISwBXQwYP3u6lK7FbxeVV0MG3wu4="
+                        class="gallery-img" />
+                    <p class="caption"> Lettuce Seeds</p>
+                </div>
+            </div>
+
+
+            <h3 class="text-center text-success mb-4">🌱 Germination Journey</h3>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/524541622/photo/new-life-growing-before-blackboard.jpg?s=612x612&w=0&k=20&c=N-DB-miHcenHdpQsmYPZNP-vxUk_GXIUx5_g6TTgjOo="
+                        class="gallery-img" />
+                    <p class="caption">Day 1–3 Sprouting Begins — tiny shoots emerge from seeds.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.istockphoto.com/id/1290574169/photo/basil-branches-that-have-taken-root-seedlings-transplanting-a-plant.jpg?s=612x612&w=0&k=20&c=T8Uh9HCr-J16E4NgrUH6E5e7_LyKeaI_p_u4x62rQkU="
+                        class="gallery-img" />
+                    <p class="caption">Day 4–7 Roots Push Through Soil — anchoring your plant.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1723412405094-35da182d2f18?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDQ2fHxMZWF2ZXMlMjBFbWVyZ2UlMjAlMjYlMjBTdHJlbmd0aGVufGVufDB8fDB8fHww"
+                        class="gallery-img" />
+                    <p class="caption">Day 8–14 Leaves Emerge & Strengthen — the plant starts thriving.</p>
+                </div>
+            </div>
+
+
+
+            <!-- Tips Section -->
+            <h3 class="text-center text-success mb-4">📌 Seed Starter Tips</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <ul class="list-group list-group-flush fs-5">
+                        <li class="list-group-item">Start with moist, well-drained soil in trays or small pots.</li>
+                        <li class="list-group-item">Keep seeds warm and use natural sunlight or grow lights.</li>
+                        <li class="list-group-item">Mist daily — avoid overwatering!</li>
+                        <li class="list-group-item">Once leaves emerge, prepare to transplant into bigger pots or garden
+                            beds.</li>
+                        <li class="list-group-item">Label your seeds and track their growth progress weekly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white mt-5" style="background-color:#2f4f2f;">
+        <div class="container p-4">
+            <div class="row">
+                <!-- About -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase fw-bold mb-3">Green World</h5>
+                    <p style="color: #f2ebeb;">
+                        Building a sustainable future together 🌍 <br>
+                        Join our community projects and be part of the change.
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index..html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="About.html" class="text-white text-decoration-none">About-us</a></li>
+                        <li><a href="community-project.html" class="text-white text-decoration-none">Community
+                                Projects</a></li>
+                        <li><a href="Contact-us.html" class="text-white text-decoration-none">Contact-us</a></li>
+                        <li><a href="Tools.html" class="text-white text-decoration-none">Tools</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase fw-bold mb-3">Follow Us</h5>
+                    <a href="https://facebook.com/yourpage" class="btn btn-outline-light btn-floating m-1"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yourhandle" class="btn btn-outline-light btn-floating m-1"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/yourhandle" class="btn btn-outline-light btn-floating m-1"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/yourprofile" class="btn btn-outline-light btn-floating m-1"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/@yourchannel" class="btn btn-outline-light btn-floating m-1"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- !-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.458);">
+            © 2025 Green World | Designed with 🌱 & 💚
+        </div>
+    </footer>
+    <!-- jQuery Animation -->
+    <script>
+        $(document).ready(function () {
+            $('.gallery-section').hide().fadeIn(1000);
+        });
+    </script>
+
+</body>
+
+</html>
+Seed-Starter.html
+Displaying plant guide.html.

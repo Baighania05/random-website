@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+    <style>
+        button{
+            color: rgb(255, 255, 255);
+            background-color: rgb(6, 106, 53);
+            border-radius: 6px;
+        }
+        .highlight{
+            background-color: cadetblue;
+            color: beige;
+            padding: 20px;
+            text-align: center;
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+    <!-- EVENTS -->
+     <button onclick="DARKMODE()"> DARKMODE</button>
+     <button onclick="LIGHTMODE()"> LIGHTMODE</button>
+     <p id="para"> PAKISTAN ZINDABAD</p>
+     <button onclick="Addclass()">ADD CLASS</button>
+        <script>
+     function DARKMODE(){
+        document.body.style.background = "#3d3a39"
+      }
+      function LIGHTMODE(){
+        document.body.style.background = "WHITE"
+      }
+      function Addclass(){
+        document.getElementById("para").classList.toggle("highlight")
+      }
+      
+ </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+</head>
+<body>
+    <p id="demo">paragraph 1</p>
+    <p id="demo">paragraph 2</p>
+    <p id="demo">paragraph 3</p>
+    <p id="demo">paragraph 4</p>
+    <p id="demo">paragraph 5</p>
+    
+    <div id="test">
+        <h1>MAI HEADING</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti exercitationem vitae distinctio velit quasi in nulla recusandae, sed modi similique facilis a id vero cum voluptatum aspernatur eveniet cumque dolorem.</p>
+
+    </div>
+
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+    <script>
+        console.log($);
+        console.log(jQuery);
+        // html tag a p h1 h2 etc 
+        // class
+        // id #
+        $("#demo").click(function() {
+            console.log("paragraph is clicked");
+            // $("p").hide()
+            $(this).hide()
+        })
+        // pure js do docment obj model
+        document.getElementById("demo").style.color="blue";
+        // document.getElementById("demo").innerHTML ="<h1> text changed </h1>"
+        
+        $("#hide").click(function() {
+            $("#test").hide();
+        })
+        $("#show").click(function() {
+            $("#test").show();
+        })
+        $("#toggle").click(function() {
+            $("#test").toggle();
+        })
+         
+         
+         
+    </script>
+</body>
+</html>
